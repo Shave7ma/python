@@ -6,6 +6,7 @@ for i in range(n):
 
 print(u'В каком порядке вы хотите вывести список? 1 - по возрастанию, 2 - по убыванию')
 k = int(input())
+print(u'Отсортированные строки:')
 
 if k == 1:
     string_list.sort(key = len)
