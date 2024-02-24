@@ -25,3 +25,18 @@ string_list.sort(key = lambda stroke: len(re.findall(gl_sogl, stroke, re.IGNOREC
 print(u'Строки, отсортированные в порядке увеличения разницы между количеством "гл-согл" и "согл-гл": ')
 for i in string_list:
     print(i)
+
+#Отсортировать строки в порядке увеличения количества "зеркальных" троек в строке
+    
+def amount_of_trio(x):
+    amount = 0
+    for i in range (0,len(x)-2):
+        if x[i] == x[i+2] and x[i] != x[i+1]:
+            amount += 1
+    return amount
+
+string_list.sort(key = lambda st: amount_of_trio(st))
+
+print(u'Строки, отсортированные в порядке увеличения количества "зеркальных" троек вида aea: ')
+for i in string_list:
+    print(i)
