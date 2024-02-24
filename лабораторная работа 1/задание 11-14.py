@@ -14,6 +14,31 @@ len(re.findall(r'[йцкнгшщзхъфвпрлджчсмтьб]', stroke, re.I
 print(u'Строки, отсортированные по разнице между количеством согласных и гласных:')
 for i in string_list:
     print(i)
+
+#Отсортировать строки в порядке увеличения квадратичного отклонения среднего веса символа строки от среднего веса символа первой строки
+    
+def quad_dev(x, av_first):
+    numerator = 0
+    amount = 0
+    for i in range(len(x)):
+        numerator += (ord(x[i]) - av_first)**2
+        amount += 1
+    return (numerator / amount)**0.5
+
+def average_of_first_row(x):
+    total_weight = 0
+    amount = 0
+    for i in range(len(x)):
+        total_weight += ord(x[i])
+        amount += 1
+    return total_weight / amount
+
+av = average_of_first_row(string_list[0])
+string_list.sort(key = lambda stroke: quad_dev(stroke, av))
+
+print(u'Строки, отсортированные в порядке, который я не хочу подробно описывать:')
+for i in string_list:
+    print(i)
     
 #Отсортировать строки в порядке увеличения разницы между количеством сочетаний "гласная-согласная" и "согласная-гласная"
 
