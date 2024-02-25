@@ -29,3 +29,24 @@ def amount_of_elements_after(x, after_what):
         return 0
 
 print(u'\nКоличество элементов после последнего максимального:', amount_of_elements_after(int_list, find_last_max(int_list)))
+
+#Переместить все элементы, расположенные до минимального, в конец массива
+
+def all_elems_after_min(x):
+    minimum = min(x)
+    i = 0
+    while i < len(x):
+        if x[i] != minimum:
+            x.append(x[i])
+            x.pop(i)
+        else:
+            break     
+    return x
+
+if (int_list.count(min(int_list)) != 1):
+    print(u'\nМинимальный элемент встречается больше одного раза, по условию задачи такого быть не должно!')
+else:
+    print(u'\nСписок, но все элементы до минимального теперь в конце:')
+    int_list = all_elems_after_min(int_list)
+    for i in int_list:
+        print(i, end = ' ')
