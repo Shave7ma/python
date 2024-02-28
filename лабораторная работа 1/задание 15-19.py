@@ -86,3 +86,26 @@ print(u'\n\nВсе индексы элементов, которые меньш�
 for i in index_list:
     print(i, end =' ')
 print(u'\nИх количество:', len(index_list))
+
+#Для введенного списка положительных чисел построить список всех положительных простых делителей элементов списка без повторений
+
+def is_prime(n):
+    if n == 2:
+        return n
+    for i in range(2, int(n**0.5)):
+        if n % i == 0:
+            return 0
+        return n
+
+def creating_set(x):
+    a = set()
+    for elem in x:
+        for i in range(2, elem):
+            if elem % i == 0 and is_prime(i):
+                a.add(i)
+    return a
+
+set_of_prime_dels = creating_set(int_list)
+print(u'Список всех простых делителей:')
+for i in set_of_prime_dels:
+    print(i, end = ' ')
