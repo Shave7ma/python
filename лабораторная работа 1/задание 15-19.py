@@ -50,3 +50,23 @@ else:
     int_list = all_elems_after_min(int_list)
     for i in int_list:
         print(i, end = ' ')
+
+#Найти максимальный из элементов на интервале [a,b]
+
+print(u'\n\nВведите целочисленное a:')
+a = int(input())
+print(u'Введите целочисленное b:')
+b = int(input())
+
+def find_max_on_interval(x, a, b):
+    interval_list = list(filter(lambda k: k <= b and k >= a, x))
+    if len(interval_list):
+        return max(interval_list)
+    else:
+        return 0
+            
+maximum_on_interval = find_max_on_interval(int_list, a, b)
+if maximum_on_interval != False:
+    print(u'Максимум на интервале [', a, u',', b, ']: ', maximum_on_interval)
+else:
+    print(u'Нет элементов, принадлежащих этому интервалу :(')
