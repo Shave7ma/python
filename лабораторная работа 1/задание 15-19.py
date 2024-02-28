@@ -63,10 +63,10 @@ def find_max_on_interval(x, a, b):
     if len(interval_list):
         return max(interval_list)
     else:
-        return 0
+        return 'no'
             
 maximum_on_interval = find_max_on_interval(int_list, a, b)
-if maximum_on_interval != False:
+if maximum_on_interval != 'no':
     print(u'Максимум на интервале [', a, u',', b, ']: ', maximum_on_interval)
 else:
     print(u'Нет элементов, принадлежащих этому интервалу :(')
