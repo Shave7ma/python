@@ -92,10 +92,11 @@ print(u'\nИх количество:', len(index_list))
 def is_prime(n):
     if n == 2:
         return n
-    for i in range(2, int(n**0.5)):
-        if n % i == 0:
-            return 0
-        return n
+    else:
+        for i in range(2, int(n**0.5)):
+            if n % i == 0:
+                return 0
+    return n
 
 def creating_set(x):
     a = set()
