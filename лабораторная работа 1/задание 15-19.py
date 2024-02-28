@@ -70,3 +70,19 @@ if maximum_on_interval != 'no':
     print(u'Максимум на интервале [', a, u',', b, ']: ', maximum_on_interval)
 else:
     print(u'Нет элементов, принадлежащих этому интервалу :(')
+
+#Вывести индексы элементов, которые меньше левого соседа, и количество таких чисел
+    
+def indexes(x):
+    indexes = []
+    for i in range (1, len(x)):
+        if x[i] < x[i-1]:
+            indexes.append(i)
+    return indexes
+
+index_list = indexes(int_list)
+
+print(u'\n\nВсе индексы элементов, которые меньше левого соседа:')
+for i in index_list:
+    print(i, end =' ')
+print(u'\nИх количество:', len(index_list))
